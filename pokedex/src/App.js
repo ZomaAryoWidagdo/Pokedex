@@ -3,24 +3,26 @@ import { Routes, Route } from "react-router-dom";
 
 import PokedexDetail from "./view/PokedexDetail";
 import Pokedex from "./view/Pokedex";
-import Homepage from "./view/Homepage";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/pokedex" element={<Pokedex />} />
-        <Route path="/pokedex/:number" element={<PokedexDetail />} />
-        <Route
-          path="*"
-          element={
-            <p>
-              There's nothing here: <span>404!</span>
-            </p>
-          }
-        />
-      </Routes>
+      <Header />
+      <div className="Content">
+        <Routes>
+          <Route path="/" element={<Pokedex />} />
+          <Route path="/pokedex/:pokemon" element={<PokedexDetail />} />
+          <Route
+            path="*"
+            element={
+              <p>
+                There's nothing here: <span>404!</span>
+              </p>
+            }
+          />
+        </Routes>
+      </div>
     </div>
   );
 }

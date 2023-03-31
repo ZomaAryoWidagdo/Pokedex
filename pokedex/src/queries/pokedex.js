@@ -124,6 +124,12 @@ export const GET_POKEMON_DETAIL_SPECIES = gql`
           desc
         }
       }
+      baseForme
+      baseSpecies
+      cosmeticFormes
+      forme
+      formeLetter
+      otherFormes
     }
   }
 `;
